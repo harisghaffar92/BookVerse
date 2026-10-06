@@ -4,7 +4,7 @@ import { getAuth } from 'firebase/auth';
 import { getStorage } from 'firebase/storage';
 
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "AIzaSyDemoKeyPlaceholderForBookstoreApp",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "demo-firebase-api-key-placeholder",
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "bookstore-demo.firebaseapp.com",
   projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "bookstore-demo",
   storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || "bookstore-demo.appspot.com",
@@ -16,7 +16,7 @@ const firebaseConfig = {
 export const isFirebaseConfigured = Boolean(
   import.meta.env.VITE_FIREBASE_API_KEY &&
   import.meta.env.VITE_FIREBASE_PROJECT_ID &&
-  import.meta.env.VITE_FIREBASE_API_KEY !== "YOUR_FIREBASE_API_KEY"
+  !import.meta.env.VITE_FIREBASE_API_KEY.includes("placeholder")
 );
 
 // Initialize Firebase
